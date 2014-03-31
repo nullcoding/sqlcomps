@@ -53,4 +53,47 @@ public:
     QString genUniqID();
 };
 
+class RAM_keys
+{
+//    Q_OBJECT
+
+public:
+
+    RAM_keys();
+    ~RAM_keys();
+
+    QString catID;
+    int subcatID_maj;
+    int subcatID_min;
+    int attrID;
+
+    QString comp_ID;
+    QString unique_ID;
+
+    QDate date_now;
+    QDate date_added;
+    QDate date_modified;
+
+    int last_cid;
+    int last_uid;
+
+    QList<int> subCatIDs_maj;
+
+    // Desktop
+    QList<int> subCatIDs_min_cat1;
+    QList<int> attrIDs_cat1;
+
+    // Laptop
+    QList<int> subCatIDs_min_cat2;
+    QList<int> attrIDs_cat2;
+
+    int getLast_cid();
+    int getLast_uid();
+
+    int getMajSubCatID(int index);
+    int getMinSubCatID(int index);
+
+    QString genCompID();
+    QString genUniqID();
+};
 #endif // ID_CLASS_LISTS_H

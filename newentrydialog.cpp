@@ -1,6 +1,6 @@
 #include "newentrydialog.h"
 #include "ui_newentrydialog.h"
-#include "id_class_lists.cpp"
+#include "hdd_class_list.cpp"
 
 NewEntryDialog::NewEntryDialog(QWidget *parent) :
     QDialog(parent),
