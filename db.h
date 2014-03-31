@@ -7,6 +7,8 @@
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
+#include <QSqlRecord>
+#include <QSqlField>
 
 static int HDD = 0;
 static int RAM = 1;

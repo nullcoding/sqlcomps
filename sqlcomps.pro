@@ -4,7 +4,8 @@ HEADERS       = db.h \
     ramentrydialog.h \
     mainpage.h \
     model.h
-SOURCES       = main.cpp \
+SOURCES       = \
+    main.cpp \
     model.cpp \
     newentrydialog.cpp \
     ramentrydialog.cpp \
@@ -25,3 +26,9 @@ FORMS += \
     mainpage.ui \
     newentrydialog.ui \
     ramentrydialog.ui
+
+RESOURCES += \
+    rc.qrc
+
+OTHER_FILES += \
+    icon/ncs.jpg

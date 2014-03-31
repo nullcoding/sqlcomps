@@ -47,6 +47,26 @@ int HDD_keys::getMinSubCatID(int index)
 
 int HDD_keys::getLast_cid()
 {
+    QString cidqdata = QString("SELECT COUNT(*) FROM HDD");
+    QSqlQuery cidquery;
+    if (!cidquery.exec(cidqdata))
+    {
+        qDebug() << QString("Error with cid query.");
+        qDebug() << cidquery.lastError().text();
+        return 0;
+    }
+    else
+    {
+        qDebug() << "Number of rows affected: " << cidquery.numRowsAffected();
+        this->last_cid = cidquery.numRowsAffected() + 1;
+        qDebug() << QString("New cid will be: ") << this->last_cid;
+        return this->last_cid;
+    }
+}
+
+/*
+int HDD_keys::getLast_cid()
+{
     QString cidqdata = QString("SELECT cid FROM HDD ORDER BY cid ASC");
     QSqlQuery cidquery;
     if (!cidquery.exec(cidqdata))
@@ -64,7 +84,7 @@ int HDD_keys::getLast_cid()
         return this->last_cid;
     }
 }
-
+*/
 int HDD_keys::getLast_uid()
 {
     int today = this->date_now.dayOfYear();

@@ -2,6 +2,7 @@
 #define MAINPAGE_H
 
 #include <QMainWindow>
+//#include "dbg.h"
 #include "model.h"
 #include "newentrydialog.h"
 #include "ramentrydialog.h"
@@ -31,6 +32,12 @@ public slots:
     void addNewComp();
     void addHDD();
     void addRAM();
+
+    // Debugging
+
+    void countHDD();
+    void countRAM();
+    void countALL();
 
 private:
     Ui::MainPage *ui;

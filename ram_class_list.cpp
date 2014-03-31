@@ -57,10 +57,9 @@ int RAM_keys::getLast_cid()
     }
     else
     {
-        qDebug() << QString("Number of records in RAM table: ");
-        qDebug() << cidquery.value(0);
-        this->last_cid = cidquery.value(0).toInt();
-        qDebug() << QString("Last cid will be: ") << this->last_cid;
+        qDebug() << "Number of rows affected: " << cidquery.numRowsAffected();
+        this->last_cid = cidquery.numRowsAffected() + 1;
+        qDebug() << QString("New cid will be: ") << this->last_cid;
         return this->last_cid;
     }
 }
@@ -107,7 +106,7 @@ int RAM_keys::getLast_uid()
 QString RAM_keys::genCompID()
 {
     QString cidnas = QString("%1").arg(this->last_cid,0,10);
-    int cidl = cidnas.length();
+    //int cidl = cidnas.length();
     return QString("null");
 }
 
